@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Moldova Vehicle Verification Service
 
-## Getting Started
+A modern, simple, and efficient web service that allows users to check how many days their foreign-registered vehicle can stay in the Republic of Moldova.
 
-First, run the development server:
+## 🚗 Features
 
+- **License Plate Verification**: Enter any international license plate number
+- **180-Day Limit Tracking**: Automatically calculates remaining days based on Moldova's foreign vehicle regulations
+- **Real-time Status**: Instant verification with detailed status information
+- **Modern UI**: Clean, responsive design with mobile-first approach
+- **Mock Backend**: Simulated API for demonstration purposes
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 14+ with App Router
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: Custom components with Radix UI primitives
+- **TypeScript**: Full type safety throughout the application
+- **Icons**: Lucide React for modern iconography
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd carVerification/car-verification
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Start the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+## 📱 Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. **Enter License Plate**: Type your vehicle's license plate number (e.g., AB123CD)
+2. **Submit**: Click "Check Status" to verify your vehicle
+3. **View Results**: See days used, days remaining, and any warnings
+4. **Check Another**: Use "Check Another Vehicle" to verify additional vehicles
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 Mock Data
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The service includes sample vehicles for testing:
 
-## Deploy on Vercel
+- **AB123CD** (Romania) - 45 days used, 135 remaining
+- **XY789ZZ** (Ukraine) - 14 days used, 166 remaining (exited)
+- **DE456FG** (Germany) - 180 days used, 0 remaining (limit reached)
+- **IT999XX** (Italy) - 120 days used, 60 remaining
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🏗️ Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── api/verify/     # API endpoint for vehicle verification
+│   ├── layout.tsx      # Root layout with metadata
+│   ├── page.tsx        # Main application page
+│   └── globals.css     # Global styles and design system
+├── components/
+│   ├── ui/             # Reusable UI components
+│   ├── PlateInput.tsx  # License plate input form
+│   └── VerificationResult.tsx # Results display component
+├── lib/
+│   ├── utils.ts        # Utility functions
+│   └── mock-data.ts    # Mock database and API logic
+└── types/
+    └── index.ts        # TypeScript type definitions
+```
+
+## 🎨 Design System
+
+The application uses a modern design system with:
+
+- **Colors**: Blue primary palette with semantic color tokens
+- **Typography**: Geist font family for clean readability
+- **Components**: Consistent spacing, borders, and shadows
+- **Responsive**: Mobile-first design with breakpoint optimization
+
+## 🔧 API Endpoints
+
+### POST /api/verify
+
+Verifies a vehicle's status in Moldova.
+
+**Request:**
+```json
+{
+  "plateNumber": "AB123CD"
+}
+```
+
+**Response:**
+```json
+{
+  "plateNumber": "AB123CD",
+  "daysRemaining": 135,
+  "daysUsed": 45,
+  "limitReached": false,
+  "lastEntry": "2024-01-15T00:00:00.000Z",
+  "warnings": [],
+  "status": "valid"
+}
+```
+
+## 📋 Status Types
+
+- **valid**: Vehicle is compliant with regulations
+- **limit_reached**: 180-day limit has been reached
+- **expired**: Vehicle has already exited Moldova
+- **not_found**: Vehicle not found in records
+
+## 🚀 Deployment
+
+The application is ready for deployment on platforms like:
+
+- **Vercel** (recommended for Next.js)
+- **Netlify**
+- **Railway**
+- **Docker** containers
+
+## 📝 License
+
+This project is for demonstration purposes only.
+
+## 🤝 Contributing
+
+This is a proof-of-concept project. For production use, consider:
+
+- Real database integration
+- User authentication
+- Payment processing
+- Government API integration
+- Enhanced security measures

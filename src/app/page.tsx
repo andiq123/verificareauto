@@ -33,7 +33,8 @@ export default function Home() {
   // Scroll to input when starting new search (only after a verification has been performed)
   useEffect(() => {
     if (!result && hasVerified && inputRef.current) {
-      setTimeout(() => {
+      // Use requestAnimationFrame for better performance
+      requestAnimationFrame(() => {
         const element = inputRef.current
         if (element) {
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
@@ -44,7 +45,7 @@ export default function Home() {
             behavior: 'smooth'
           })
         }
-      }, 100) // Small delay to ensure animation has started
+      })
     }
   }, [result, hasVerified])
 
@@ -118,7 +119,7 @@ export default function Home() {
         {/* Main Content with gradient ring */}
         <div className="flex justify-center px-4 sm:px-6 lg:px-8">
           <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none xl:max-w-none 2xl:max-w-none">
-            <div className="pointer-events-none absolute -inset-1 rounded-[28px] bg-gradient-to-r from-blue-500/30 via-indigo-500/30 to-blue-500/30 opacity-50 blur-lg" />
+            <div className="pointer-events-none absolute -inset-1 rounded-[28px] bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-blue-500/20 opacity-40 blur-md sm:blur-lg" />
             <motion.div layout className="relative w-full">
               {!result ? (
                 <div ref={inputRef}>

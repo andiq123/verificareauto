@@ -34,33 +34,33 @@ export const gradientPatterns = {
 }
 
 export const animationPatterns = {
-  // Common motion variants
+  // Common motion variants - optimized for mobile performance
   fadeInUp: {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 0, y: 10 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5, ease: 'easeOut' }
+    transition: { duration: 0.4, ease: 'easeOut' }
   },
   
   fadeInScale: {
-    initial: { opacity: 0, scale: 0.95 },
+    initial: { opacity: 0, scale: 0.98 },
     animate: { opacity: 1, scale: 1 },
-    transition: { duration: 0.4, ease: [0.4, 0.0, 0.2, 1] }
+    transition: { duration: 0.3, ease: [0.4, 0.0, 0.2, 1] }
   },
   
   slideInLeft: {
-    initial: { opacity: 0, x: -20 },
+    initial: { opacity: 0, x: -10 },
     animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.5, ease: 'easeOut' }
+    transition: { duration: 0.4, ease: 'easeOut' }
   },
   
   slideInRight: {
-    initial: { opacity: 0, x: 20 },
+    initial: { opacity: 0, x: 10 },
     animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.5, ease: 'easeOut' }
+    transition: { duration: 0.4, ease: 'easeOut' }
   },
   
   staggerChildren: {
-    staggerChildren: 0.1
+    staggerChildren: 0.05
   }
 }
 

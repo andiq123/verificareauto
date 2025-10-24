@@ -67,7 +67,7 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
       }}
       className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto"
     >
-      <Card className="rounded-2xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-lg">
+      <Card className="rounded-2xl border border-white/50 bg-white/80 shadow-lg">
         <CardHeader className="text-center px-4 sm:px-6">
           <div className="mx-auto mb-4 sm:mb-6 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 shadow-lg">
             <Car className="h-8 w-8 sm:h-10 sm:w-10 text-blue-700" aria-hidden="true" />

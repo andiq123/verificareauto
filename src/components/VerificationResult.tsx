@@ -74,7 +74,7 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
             className="text-center"
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm shadow-sm">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 shadow-sm">
                 <span className="text-2xl">{getStatusEmoji()}</span>
               </div>
               <div className="text-center sm:text-left">
@@ -254,13 +254,13 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
                 </div>
                 <div className="space-y-4">
                   {result.firstEntry && (
-                    <div className="flex justify-between items-center p-4 rounded-xl bg-white/60 backdrop-blur-sm border border-indigo-100">
+                    <div className="flex justify-between items-center p-4 rounded-xl bg-white/60  border border-indigo-100">
                       <span className="font-semibold text-indigo-700">Prima intrare:</span>
                       <span className="font-bold text-indigo-900 text-lg">{new Date(result.firstEntry).toLocaleDateString('ro-RO')}</span>
                     </div>
                   )}
                   {result.lastEntry && (
-                    <div className="flex justify-between items-center p-4 rounded-xl bg-white/60 backdrop-blur-sm border border-indigo-100">
+                    <div className="flex justify-between items-center p-4 rounded-xl bg-white/60  border border-indigo-100">
                       <span className="font-semibold text-indigo-700">Ultima intrare:</span>
                       <span className="font-bold text-indigo-900 text-lg">{new Date(result.lastEntry).toLocaleDateString('ro-RO')}</span>
                     </div>
@@ -284,11 +284,11 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
                   <h3 className={`${cardStyles.title} text-emerald-800`}>Perioada de Numărare</h3>
                 </div>
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center p-4 rounded-xl bg-white/60 backdrop-blur-sm border border-emerald-100">
+                  <div className="flex justify-between items-center p-4 rounded-xl bg-white/60  border border-emerald-100">
                     <span className="font-semibold text-emerald-700">Începe:</span>
                     <span className="font-bold text-emerald-900 text-lg">{new Date(result.countingPeriodStart).toLocaleDateString('ro-RO')}</span>
                   </div>
-                  <div className="flex justify-between items-center p-4 rounded-xl bg-white/60 backdrop-blur-sm border border-emerald-100">
+                  <div className="flex justify-between items-center p-4 rounded-xl bg-white/60  border border-emerald-100">
                     <span className="font-semibold text-emerald-700">Se termină:</span>
                     <span className="font-bold text-emerald-900 text-lg">{new Date(result.countingPeriodEnd).toLocaleDateString('ro-RO')}</span>
                   </div>
@@ -315,7 +315,7 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
             className="w-full h-16 rounded-2xl text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-800 transform hover:scale-[1.02]"
           >
             <div className="flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 ">
                 <span className="text-lg">🔍</span>
               </div>
               Verifică Alt Autovehicul

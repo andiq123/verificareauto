@@ -13,6 +13,7 @@ export default function Home() {
   const [result, setResult] = useState<VerificationResponse | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [hasVerified, setHasVerified] = useState(false) // Track if user has performed a verification
   const resultsRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLDivElement>(null)
 
@@ -29,9 +30,9 @@ export default function Home() {
     }
   }, [result])
 
-  // Scroll to input when starting new search
+  // Scroll to input when starting new search (only after a verification has been performed)
   useEffect(() => {
-    if (!result && inputRef.current) {
+    if (!result && hasVerified && inputRef.current) {
       setTimeout(() => {
         const element = inputRef.current
         if (element) {
@@ -45,12 +46,13 @@ export default function Home() {
         }
       }, 100) // Small delay to ensure animation has started
     }
-  }, [result])
+  }, [result, hasVerified])
 
   const handlePlateSubmit = async (plateNumber: string) => {
     setLoading(true)
     setError('')
     setResult(null)
+    setHasVerified(true) // Mark that user has performed a verification
 
     try {
       const response = await fetch('/api/verify', {

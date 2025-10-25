@@ -7,7 +7,7 @@ import { VerificationResult } from '@/components/VerificationResult'
 import { VerificationResponse } from '@/types'
 import { Header } from '@/components/Header'
 import { LegalInfo } from '@/components/LegalInfo'
-import { Shield, Timer, Calendar, Globe, Zap, CheckCircle } from 'lucide-react'
+import { Shield, Timer, Calendar, Globe, Zap, CheckCircle, RefreshCw } from 'lucide-react'
 
 export default function Home() {
   const [result, setResult] = useState<VerificationResponse | null>(null)

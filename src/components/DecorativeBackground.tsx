@@ -8,8 +8,8 @@ export function DecorativeBackground() {
       className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
       style={{ contain: 'layout paint', transform: 'translateZ(0)', willChange: 'transform' }}
     >
-      {/* Clean base */}
-      <div className="absolute inset-0 bg-[var(--background)]" />
+      {/* Clean base with subtle gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-gray-50" />
 
       {/* Simplified gradient blobs - reduced blur for mobile performance */}
       <motion.div

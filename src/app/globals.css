@@ -113,15 +113,15 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Enhanced shadow utilities for glass effect */
+/* Simplified shadow utilities for glass effect */
 .shadow-glass {
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
 }
 
 .shadow-glass-lg {
-  box-shadow: 0 15px 35px 0 rgba(31, 38, 135, 0.2);
+  box-shadow: 0 8px 24px 0 rgba(31, 38, 135, 0.12);
 }
 
 .shadow-glass-xl {
-  box-shadow: 0 25px 50px 0 rgba(31, 38, 135, 0.15);
+  box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.1);
 }

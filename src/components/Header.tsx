@@ -15,7 +15,7 @@ export function Header() {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-4"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 via-indigo-500 to-blue-600 shadow-glass">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 via-indigo-500 to-blue-600">
               <Shield className="h-6 w-6 text-white" />
             </div>
             <div>

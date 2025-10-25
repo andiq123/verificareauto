@@ -161,7 +161,7 @@ export default function Home() {
                 desc: 'Zilele se resetează la 1 ianuarie.',
               },
             ].map(({ icon: Icon, title, desc }, idx) => (
-              <div key={idx} className="relative overflow-hidden rounded-xl border border-white/30 bg-white/60 px-4 py-4 shadow-glass backdrop-blur-xl transition-all duration-300 hover:shadow-glass-lg hover:bg-white/70">
+              <div key={idx} className="relative overflow-hidden rounded-xl border border-white/30 bg-white/60 px-4 py-4 shadow-glass backdrop-blur-xl transition-all duration-300  hover:bg-white/70">
                 <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-indigo-500" />
                 <div className="relative flex items-start gap-3">
                   <div className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-50/80 backdrop-blur-sm">

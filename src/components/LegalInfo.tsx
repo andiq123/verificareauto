@@ -22,7 +22,7 @@ export function LegalInfo() {
             className="text-center"
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/30 backdrop-blur-sm shadow-glass">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/30 backdrop-blur-sm">
                 <Scale className="h-6 w-6 text-white" />
               </div>
               <div className="text-center sm:text-left">
@@ -48,12 +48,12 @@ export function LegalInfo() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50/80 to-blue-100/80 border border-blue-200/50 shadow-glass hover:shadow-glass-lg transition-all duration-300"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50/80 to-blue-100/80 border border-blue-200/50 shadow-glass transition-all duration-300"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 ">
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-blue-800">Cine poate introduce mijloacele de transport?</h3>
@@ -86,12 +86,12 @@ export function LegalInfo() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-50/80 to-emerald-100/80 border border-green-200/50 shadow-glass hover:shadow-glass-lg transition-all duration-300"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-50/80 to-emerald-100/80 border border-green-200/50 shadow-glass transition-all duration-300"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 shadow-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 ">
                   <Clock className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-green-800">Termenul de admitere temporară</h3>
@@ -100,7 +100,7 @@ export function LegalInfo() {
                 <p className="text-base text-green-800 leading-relaxed mb-4">
                   Mijloacele de transport de uz privat pot rămâne pe teritoriul vamal:
                 </p>
-                <div className="text-center p-6 rounded-xl bg-gradient-to-r from-green-100/80 to-emerald-100/80 border border-green-200/60 backdrop-blur-sm shadow-glass">
+                <div className="text-center p-6 rounded-xl bg-gradient-to-r from-green-100/80 to-emerald-100/80 border border-green-200/60 backdrop-blur-sm">
                   <div className="text-4xl sm:text-5xl font-bold text-green-600 mb-2">180</div>
                   <div className="text-lg font-semibold text-green-800">zile într-un interval de</div>
                   <div className="text-2xl font-bold text-green-700 mt-2">12 luni consecutive</div>
@@ -122,12 +122,12 @@ export function LegalInfo() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-50/80 to-indigo-100/80 border border-purple-200/50 shadow-glass hover:shadow-glass-lg transition-all duration-300"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-50/80 to-indigo-100/80 border border-purple-200/50 shadow-glass transition-all duration-300"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 shadow-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 ">
                   <Calendar className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-purple-800">Calcularea termenului</h3>
@@ -136,7 +136,7 @@ export function LegalInfo() {
                 <p className="text-base text-purple-800 leading-relaxed mb-4">
                   Termenul începe să curgă de la data plasării sub regim vamal.
                 </p>
-                <div className="p-4 rounded-xl bg-gradient-to-r from-purple-100/80 to-indigo-100/80 border border-purple-200/60 backdrop-blur-sm shadow-glass">
+                <div className="p-4 rounded-xl bg-gradient-to-r from-purple-100/80 to-indigo-100/80 border border-purple-200/60 backdrop-blur-sm">
                   <p className="text-sm text-purple-900 font-medium leading-relaxed">
                     <strong>Exemplu:</strong> Dacă mijlocul de transport a fost declarat prin acțiune la data de 01.01.2024, 
                     atunci în perioada de 12 luni consecutive (01.01.2024 – 31.12.2024) acest mijloc de transport 
@@ -152,24 +152,24 @@ export function LegalInfo() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-50/80 to-orange-100/80 border border-red-200/50 shadow-glass hover:shadow-glass-lg transition-all duration-300"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-50/80 to-orange-100/80 border border-red-200/50 shadow-glass transition-all duration-300"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-orange-600 shadow-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-orange-600 ">
                   <AlertCircle className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-red-800">Sancțiuni pentru nerespectarea termenelor</h3>
               </div>
               <div className="space-y-4">
                 <div className="space-y-3">
-                  <div className="p-4 rounded-xl bg-red-100/80 border border-red-200/60 backdrop-blur-sm shadow-glass">
+                  <div className="p-4 rounded-xl bg-red-100/80 border border-red-200/60 backdrop-blur-sm">
                     <p className="text-sm text-red-900 font-medium">
                       <strong>Până la 30 de zile:</strong> Amendă de la 84 la 90 de unități convenționale (4.200 – 4.500 lei)
                     </p>
                   </div>
-                  <div className="p-4 rounded-xl bg-red-100/80 border border-red-200/60 backdrop-blur-sm shadow-glass">
+                  <div className="p-4 rounded-xl bg-red-100/80 border border-red-200/60 backdrop-blur-sm">
                     <p className="text-sm text-red-900 font-medium">
                       <strong>Mai mult de 30 de zile:</strong> Amendă de la 1.300 la 1.500 de unități convenționale (65.000 – 75.000 lei)
                     </p>
@@ -192,12 +192,12 @@ export function LegalInfo() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-50/80 to-blue-100/80 border border-indigo-200/50 shadow-glass hover:shadow-glass-lg transition-all duration-300"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-50/80 to-blue-100/80 border border-indigo-200/50 shadow-glass transition-all duration-300"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 shadow-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 ">
                   <Shield className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-indigo-800">Condiții pentru admitere temporară</h3>
@@ -235,12 +235,12 @@ export function LegalInfo() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 1.0 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-50/80 to-green-100/80 border border-emerald-200/50 shadow-glass hover:shadow-glass-lg transition-all duration-300"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-50/80 to-green-100/80 border border-emerald-200/50 shadow-glass transition-all duration-300"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-green-600 shadow-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-green-600 ">
                   <Phone className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-emerald-800">Contact pentru informații</h3>
@@ -249,7 +249,7 @@ export function LegalInfo() {
                 <p className="text-base text-emerald-800 leading-relaxed mb-4">
                   Pentru neclarități sau întrebări cu privire la legislația vamală:
                 </p>
-                <div className="text-center p-6 rounded-xl bg-gradient-to-r from-emerald-100/80 to-green-100/80 border border-emerald-200/60 backdrop-blur-sm shadow-glass">
+                <div className="text-center p-6 rounded-xl bg-gradient-to-r from-emerald-100/80 to-green-100/80 border border-emerald-200/60 backdrop-blur-sm">
                   <div className="text-3xl sm:text-4xl font-bold text-emerald-600 mb-2">+373 22 78-88-88</div>
                   <div className="text-lg font-semibold text-emerald-800 mb-2">Centrul Unic de Apel</div>
                   <div className="text-sm text-emerald-700">Serviciul Vamal al Republicii Moldova</div>
@@ -266,9 +266,9 @@ export function LegalInfo() {
           transition={{ duration: 0.5, delay: 1.1 }}
           className="mt-8"
         >
-          <div className="p-6 rounded-2xl bg-gradient-to-r from-slate-100/80 to-gray-100/80 border border-slate-200/60 backdrop-blur-sm shadow-glass">
+          <div className="p-6 rounded-2xl bg-gradient-to-r from-slate-100/80 to-gray-100/80 border border-slate-200/60 backdrop-blur-sm">
             <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-500 shadow-lg">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-500 ">
                 <BookOpen className="h-5 w-5 text-white" />
               </div>
               <h4 className="text-lg font-bold text-slate-800">Notă importantă</h4>

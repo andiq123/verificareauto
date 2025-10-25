@@ -69,7 +69,7 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
     >
       <Card className="rounded-2xl border border-white/30 bg-white/60 shadow-glass backdrop-blur-xl">
         <CardHeader className="text-center px-4 sm:px-6">
-          <div className="mx-auto mb-4 sm:mb-6 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50/80 to-indigo-50/80 shadow-glass backdrop-blur-sm">
+          <div className="mx-auto mb-4 sm:mb-6 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50/80 to-indigo-50/80 backdrop-blur-sm">
             <Car className="h-8 w-8 sm:h-10 sm:w-10 text-blue-700" aria-hidden="true" />
           </div>
           <CardTitle className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Verifică un autovehicul</CardTitle>
@@ -83,8 +83,8 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
               <label htmlFor="plate" className="text-sm sm:text-base font-medium text-slate-700">
                 Numărul de înmatriculare
               </label>
-              <div className="group relative flex items-center rounded-xl border-2 border-slate-200/60 bg-white/80 backdrop-blur-sm shadow-glass transition-all duration-200 focus-within:border-blue-500 focus-within:shadow-glass-lg focus-within:shadow-blue-500/20 min-h-[56px] sm:min-h-[60px]">
-                <div className="ml-3 sm:ml-4 flex h-10 w-14 sm:h-11 sm:w-16 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-xs sm:text-sm font-bold tracking-wider text-white shadow-glass">
+              <div className="group relative flex items-center rounded-xl border-2 border-slate-200/60 bg-white/80 backdrop-blur-sm transition-all duration-200 focus-within:border-blue-500 min-h-[56px] sm:min-h-[60px]">
+                <div className="ml-3 sm:ml-4 flex h-10 w-14 sm:h-11 sm:w-16 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-xs sm:text-sm font-bold tracking-wider text-white">
                   EU
                 </div>
                 <div className="mx-3 sm:mx-4 h-6 sm:h-7 w-px bg-gradient-to-b from-slate-200 to-slate-300" />
@@ -115,7 +115,7 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
             <Button
               type="submit"
               variant="primary"
-              className="w-full h-12 sm:h-14 rounded-xl text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+              className="w-full h-12 sm:h-14 rounded-xl text-sm sm:text-base font-semibold transition-all duration-200"
               disabled={loading}
             >
               {loading ? (

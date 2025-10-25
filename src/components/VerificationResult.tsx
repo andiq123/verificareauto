@@ -74,7 +74,7 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
             className="text-center"
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/30 shadow-glass backdrop-blur-sm">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/30 backdrop-blur-sm">
                 <span className="text-2xl">{getStatusEmoji()}</span>
               </div>
               <div className="text-center sm:text-left">
@@ -312,7 +312,7 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
           <Button
             onClick={onNewSearch}
             variant="primary"
-            className="w-full h-16 rounded-2xl text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-800 transform hover:scale-[1.02]"
+            className="w-full h-16 rounded-2xl text-lg font-bold shadow-glass transition-all duration-300 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-800 transform hover:scale-[1.02]"
           >
             <div className="flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 ">

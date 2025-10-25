@@ -65,10 +65,10 @@ export const animationPatterns = {
 }
 
 export const cardStyles = {
-  base: 'group relative overflow-hidden rounded-2xl shadow-glass hover:shadow-glass-lg transition-all duration-300',
+  base: 'group relative overflow-hidden rounded-2xl shadow-glass transition-all duration-300',
   hoverOverlay: 'absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300',
   content: 'relative p-6 sm:p-8',
-  iconContainer: 'flex h-12 w-12 items-center justify-center rounded-xl shadow-glass',
+  iconContainer: 'flex h-12 w-12 items-center justify-center rounded-xl',
   title: 'text-xl font-bold',
   subtitle: 'text-sm font-medium',
 }

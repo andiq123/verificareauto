@@ -65,24 +65,24 @@ export const animationPatterns = {
 }
 
 export const cardStyles = {
-  base: 'group relative overflow-hidden rounded-2xl shadow-glass transition-all duration-300',
+  base: 'group relative overflow-hidden rounded-3xl shadow-glass-lg transition-all duration-300 hover:shadow-glass-xl hover:-translate-y-1',
   hoverOverlay: 'absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300',
   content: 'relative p-6 sm:p-8',
-  iconContainer: 'flex h-12 w-12 items-center justify-center rounded-xl',
-  title: 'text-xl font-bold',
-  subtitle: 'text-sm font-medium',
+  iconContainer: 'flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl shadow-md',
+  title: 'text-xl sm:text-2xl font-bold',
+  subtitle: 'text-sm sm:text-base font-medium',
 }
 
 export const responsiveClasses = {
   container: 'container mx-auto px-4 sm:px-6 lg:px-8',
   grid: 'grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8',
-  gridThree: 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6',
-  gridFour: 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6',
+  gridThree: 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8',
+  gridFour: 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8',
   text: {
-    heading: 'text-xl sm:text-2xl font-bold tracking-tight',
-    subheading: 'text-lg font-semibold',
-    body: 'text-base leading-relaxed',
-    small: 'text-sm',
-    tiny: 'text-xs'
+    heading: 'text-2xl sm:text-3xl font-bold tracking-tight',
+    subheading: 'text-lg sm:text-xl font-semibold',
+    body: 'text-base sm:text-lg leading-relaxed',
+    small: 'text-sm sm:text-base',
+    tiny: 'text-xs sm:text-sm'
   }
 }

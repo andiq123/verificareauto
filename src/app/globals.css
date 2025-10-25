@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
 :root {
+  /* Modern color palette with better contrast and accessibility */
   --background: #ffffff;
   --foreground: #0f172a;
-  --card: rgba(255, 255, 255, 0.8);
+  --card: rgba(255, 255, 255, 0.85);
   --card-foreground: #0f172a;
-  --popover: rgba(255, 255, 255, 0.95);
+  --popover: rgba(255, 255, 255, 0.98);
   --popover-foreground: #0f172a;
-  --primary: #3b82f6;
+  --primary: #2563eb;
   --primary-foreground: #ffffff;
-  --secondary: rgba(248, 250, 252, 0.8);
+  --secondary: rgba(248, 250, 252, 0.9);
   --secondary-foreground: #334155;
-  --muted: rgba(241, 245, 249, 0.8);
+  --muted: rgba(241, 245, 249, 0.9);
   --muted-foreground: #64748b;
-  --accent: rgba(248, 250, 252, 0.8);
+  --accent: rgba(248, 250, 252, 0.9);
   --accent-foreground: #334155;
-  --destructive: #ef4444;
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: rgba(226, 232, 240, 0.6);
-  --input: rgba(226, 232, 240, 0.8);
-  --ring: #3b82f6;
-  --radius: 0.75rem;
+  --border: rgba(226, 232, 240, 0.7);
+  --input: rgba(226, 232, 240, 0.9);
+  --ring: #2563eb;
+  --radius: 0.875rem;
+  
+  /* Modern spacing scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  /* Modern shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 @theme inline {
@@ -51,77 +67,142 @@
   :root {
     --background: #0f172a;
     --foreground: #f8fafc;
-    --card: rgba(30, 41, 59, 0.8);
+    --card: rgba(30, 41, 59, 0.85);
     --card-foreground: #f8fafc;
-    --popover: rgba(30, 41, 59, 0.95);
+    --popover: rgba(30, 41, 59, 0.98);
     --popover-foreground: #f8fafc;
     --primary: #60a5fa;
     --primary-foreground: #0f172a;
-    --secondary: rgba(51, 65, 85, 0.8);
+    --secondary: rgba(51, 65, 85, 0.9);
     --secondary-foreground: #e2e8f0;
-    --muted: rgba(51, 65, 85, 0.8);
+    --muted: rgba(51, 65, 85, 0.9);
     --muted-foreground: #94a3b8;
-    --accent: rgba(51, 65, 85, 0.8);
+    --accent: rgba(51, 65, 85, 0.9);
     --accent-foreground: #e2e8f0;
     --destructive: #f87171;
     --destructive-foreground: #0f172a;
-    --border: rgba(71, 85, 105, 0.6);
-    --input: rgba(71, 85, 105, 0.8);
+    --border: rgba(71, 85, 105, 0.7);
+    --input: rgba(71, 85, 105, 0.9);
     --ring: #60a5fa;
   }
 }
 
 html {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 30%, #f1f5f9 100%);
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 30%, #f1f5f9 100%);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   min-height: 100svh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
 
-/* Improve mobile scrolling stability */
+/* Improve mobile scrolling stability and performance */
 * {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
-/* Glass morphism utilities */
+/* Better focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Improved text selection */
+::selection {
+  background-color: rgba(37, 99, 235, 0.2);
+  color: var(--foreground);
+}
+
+/* Modern glass morphism utilities with better performance */
 .glass {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-lg);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-xl);
 }
 
 .glass-subtle {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
-/* Simplified shadow utilities for glass effect */
+/* Modern shadow utilities with better depth perception */
 .shadow-glass {
-  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .shadow-glass-lg {
-  box-shadow: 0 8px 24px 0 rgba(31, 38, 135, 0.12);
+  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.1), 0 2px 6px 0 rgba(0, 0, 0, 0.05);
 }
 
 .shadow-glass-xl {
-  box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.1);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.12), 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* Modern gradient utilities */
+.gradient-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #64748b 0%, #94a3b8 50%, #cbd5e1 100%);
+}
+
+.gradient-success {
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+}
+
+.gradient-warning {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%);
+}
+
+.gradient-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+}
+
+/* Modern spacing utilities */
+.space-y-modern > * + * {
+  margin-top: var(--spacing-lg);
+}
+
+.space-x-modern > * + * {
+  margin-left: var(--spacing-lg);
+}
+
+/* Mobile-first responsive utilities */
+@media (max-width: 640px) {
+  .mobile-padding {
+    padding: var(--spacing-md);
+  }
+  
+  .mobile-text-sm {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  .mobile-text-base {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
 }

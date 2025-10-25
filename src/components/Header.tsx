@@ -14,6 +14,7 @@ export function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: [0.4, 0.0, 0.2, 1] }}
             className="flex items-center gap-3 sm:gap-4"
+            style={{ willChange: 'opacity, transform' }}
           >
             <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 via-indigo-500 to-blue-600 shadow-lg">
               <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
@@ -30,6 +31,7 @@ export function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.4, 0.0, 0.2, 1] }}
             className="hidden lg:flex items-center gap-4 xl:gap-6"
+            style={{ willChange: 'opacity, transform' }}
           >
             <div className="flex items-center gap-2 text-sm text-slate-600 px-3 py-2 rounded-full bg-blue-50/80 border border-blue-200/60">
               <Globe className="h-4 w-4 text-blue-500" />
@@ -51,6 +53,7 @@ export function Header() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.2 }}
             className="lg:hidden flex items-center gap-2 text-xs text-slate-500 px-2 py-1 rounded-full bg-slate-100/80 border border-slate-200/60"
+            style={{ willChange: 'opacity, transform' }}
           >
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
             <span className="font-medium">Online</span>

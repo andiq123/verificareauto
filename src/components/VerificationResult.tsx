@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Calendar, Clock, AlertTriangle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { VerificationResultProps } from '@/types'
-import { gradientPatterns, animationPatterns, cardStyles, responsiveClasses } from '@/lib/styles'
+import { gradientPatterns, animationPatterns, cardStyles, responsiveClasses, optimizedAnimations } from '@/lib/styles'
 
 export function VerificationResult({ result, onNewSearch }: VerificationResultProps) {
   const getStatusEmoji = () => {
@@ -63,6 +63,7 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
         staggerChildren: 0.1
       }}
       className="w-full mx-auto"
+      style={{ willChange: 'opacity, transform' }}
     >
       {/* Header Section */}
       <div className={`relative overflow-hidden rounded-3xl ${gradientPatterns.blueHeader} shadow-glass-lg mb-8`}>
@@ -72,6 +73,7 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
             {...animationPatterns.fadeInUp}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-center"
+            style={{ willChange: 'opacity, transform' }}
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mb-6">
               <motion.div 
@@ -79,6 +81,7 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-white/30 backdrop-blur-sm shadow-lg"
+                style={{ willChange: 'opacity, transform' }}
               >
                 <span className="text-3xl sm:text-4xl">{getStatusEmoji()}</span>
               </motion.div>
@@ -107,9 +110,10 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
           >
             {/* Days Used Card */}
             <motion.div 
-              {...animationPatterns.fadeInScale}
+              {...optimizedAnimations.scaleIn}
               transition={{ duration: 0.4, delay: 0.5 }}
               className={`${cardStyles.base} ${gradientPatterns.blueCard} ${gradientPatterns.blueBorder}`}
+              style={{ willChange: 'opacity, transform' }}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-blue-500/10 to-blue-600/10`}></div>
               <div className={`${cardStyles.content} text-center`}>
@@ -130,9 +134,10 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
 
             {/* Days Remaining Card */}
             <motion.div 
-              {...animationPatterns.fadeInScale}
+              {...optimizedAnimations.scaleIn}
               transition={{ duration: 0.4, delay: 0.6 }}
               className={`${cardStyles.base} ${gradientPatterns.greenCard} ${gradientPatterns.greenBorder}`}
+              style={{ willChange: 'opacity, transform' }}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-green-500/10 to-emerald-600/10`}></div>
               <div className={`${cardStyles.content} text-center`}>
@@ -153,9 +158,10 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
 
             {/* Progress Card */}
             <motion.div 
-              {...animationPatterns.fadeInScale}
+              {...optimizedAnimations.scaleIn}
               transition={{ duration: 0.4, delay: 0.7 }}
               className={`${cardStyles.base} ${gradientPatterns.purpleCard} ${gradientPatterns.purpleBorder}`}
+              style={{ willChange: 'opacity, transform' }}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-purple-500/10 to-indigo-600/10`}></div>
               <div className={`${cardStyles.content} text-center`}>
@@ -182,9 +188,10 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
 
             {/* Status Card */}
             <motion.div 
-              {...animationPatterns.fadeInScale}
+              {...optimizedAnimations.scaleIn}
               transition={{ duration: 0.4, delay: 0.8 }}
               className={`${cardStyles.base} ${gradientPatterns.orangeCard} ${gradientPatterns.orangeBorder}`}
+              style={{ willChange: 'opacity, transform' }}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-orange-500/10 to-yellow-600/10`}></div>
               <div className={`${cardStyles.content} text-center`}>
@@ -245,9 +252,10 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
           >
             {/* Entry Information */}
             <motion.div 
-              {...animationPatterns.slideInLeft}
+              {...optimizedAnimations.slideUp}
               transition={{ duration: 0.5, delay: 1.0 }}
               className={`${cardStyles.base} ${gradientPatterns.indigoCard} ${gradientPatterns.indigoBorder}`}
+              style={{ willChange: 'opacity, transform' }}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-indigo-500/10 to-blue-600/10`}></div>
               <div className={cardStyles.content}>
@@ -276,9 +284,10 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
 
             {/* Counting Period Information */}
             <motion.div 
-              {...animationPatterns.slideInRight}
+              {...optimizedAnimations.slideUp}
               transition={{ duration: 0.5, delay: 1.1 }}
               className={`${cardStyles.base} ${gradientPatterns.emeraldCard} ${gradientPatterns.emeraldBorder}`}
+              style={{ willChange: 'opacity, transform' }}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-emerald-500/10 to-green-600/10`}></div>
               <div className={cardStyles.content}>

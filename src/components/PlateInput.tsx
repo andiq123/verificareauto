@@ -58,32 +58,29 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24, scale: 0.96 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: -24, scale: 0.96 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
       transition={{ 
-        duration: 0.6, 
-        ease: [0.4, 0.0, 0.2, 1]
+        duration: 0.4, 
+        ease: "easeOut"
       }}
       className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto"
-      style={{ willChange: 'opacity, transform' }}
     >
       <Card className="rounded-3xl border border-white/40 bg-white/80 shadow-glass-lg backdrop-blur-xl">
         <CardHeader className="text-center px-6 sm:px-8 py-8">
           <motion.div 
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="mx-auto mb-6 flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-50/90 to-indigo-50/90 backdrop-blur-sm shadow-lg"
-            style={{ willChange: 'opacity, transform' }}
           >
             <Car className="h-10 w-10 sm:h-12 sm:w-12 text-blue-700" aria-hidden="true" />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            style={{ willChange: 'opacity, transform' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
             <CardTitle className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-3">
               Verifică un autovehicul
@@ -97,10 +94,9 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
           <motion.form 
             onSubmit={handleSubmit} 
             className="space-y-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            style={{ willChange: 'opacity, transform' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
           >
             <div className="space-y-3">
               <label htmlFor="plate" className="text-sm sm:text-base font-semibold text-slate-700 block">
@@ -132,12 +128,11 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
                 {invalidCharError && (
                   <motion.p 
                     key="invalid-char-error"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                     className="text-sm text-red-600 font-medium flex items-center gap-2"
-                    style={{ willChange: 'opacity, transform' }}
                   >
                     <div className="w-1 h-1 bg-red-500 rounded-full"></div>
                     {invalidCharError}
@@ -146,12 +141,11 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
                 {error && (
                   <motion.p 
                     key="error"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                     className="text-sm text-red-600 font-medium flex items-center gap-2"
-                    style={{ willChange: 'opacity, transform' }}
                   >
                     <div className="w-1 h-1 bg-red-500 rounded-full"></div>
                     {error}

@@ -90,9 +90,8 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.4, 0.0, 0.2, 1] }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center mb-16"
-          style={{ willChange: 'opacity, transform' }}
         >
           <h1 className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-gradient-to-b from-slate-900 via-blue-700 to-indigo-600 bg-clip-text text-transparent leading-tight">
             Verificare Autovehicule Străine
@@ -127,15 +126,13 @@ export default function Home() {
                   <motion.div 
                     key="input"
                     ref={inputRef}
-                    initial={{ opacity: 0, y: 20, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -20, scale: 0.98 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
                     transition={{ 
-                      duration: 0.5, 
-                      ease: [0.4, 0.0, 0.2, 1],
-                      layout: { duration: 0.3 }
+                      duration: 0.4, 
+                      ease: "easeOut"
                     }}
-                    style={{ willChange: 'opacity, transform' }}
                   >
                     <PlateInput onSubmit={handlePlateSubmit} loading={loading} />
                   </motion.div>
@@ -143,15 +140,13 @@ export default function Home() {
                   <motion.div 
                     key="result"
                     ref={resultsRef}
-                    initial={{ opacity: 0, y: 20, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -20, scale: 0.98 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
                     transition={{ 
-                      duration: 0.5, 
-                      ease: [0.4, 0.0, 0.2, 1],
-                      layout: { duration: 0.3 }
+                      duration: 0.4, 
+                      ease: "easeOut"
                     }}
-                    style={{ willChange: 'opacity, transform' }}
                   >
                     <VerificationResult result={result} onNewSearch={handleNewSearch} />
                   </motion.div>
@@ -169,16 +164,15 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6, ease: [0.4, 0.0, 0.2, 1], delay: 0.2 }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
               className="mx-auto mt-12"
             >
               <div className="mx-auto h-px w-full max-w-4xl bg-gradient-to-r from-transparent via-blue-200/40 to-transparent" />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: [0.4, 0.0, 0.2, 1], delay: 0.3 }}
+                transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
                 className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-                style={{ willChange: 'opacity, transform' }}
               >
             {[
               {
@@ -216,9 +210,8 @@ export default function Home() {
                 key={idx} 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.3 + idx * 0.05 }}
+                transition={{ duration: 0.3, delay: 0.3 + idx * 0.05 }}
                 className="group relative overflow-hidden rounded-3xl border border-white/60 bg-white/80 px-8 py-8 shadow-glass-lg backdrop-blur-xl transition-all duration-500 hover:bg-white/90 hover:shadow-glass-xl hover:-translate-y-2 hover:scale-[1.02] transform-gpu"
-                style={{ willChange: 'opacity, transform' }}
               >
                 {/* Animated gradient background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform-gpu`} />
@@ -260,12 +253,11 @@ export default function Home() {
           {error && (
             <motion.div
               key="error"
-              initial={{ opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: -10 }}
-              transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1] }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="max-w-lg mx-auto mt-8 p-6 bg-red-50/90 border border-red-200/60 rounded-2xl text-red-800 text-center shadow-glass backdrop-blur-sm"
-              style={{ willChange: 'opacity, transform' }}
             >
               <div className="flex items-center justify-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-red-500 rounded-full"></div>
@@ -279,9 +271,8 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
+          transition={{ delay: 0.3, duration: 0.3 }}
           className="text-center mt-16 text-sm text-slate-500"
-          style={{ willChange: 'opacity' }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100/80 border border-slate-200/60 backdrop-blur-sm">
             <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>

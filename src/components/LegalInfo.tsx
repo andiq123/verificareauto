@@ -12,25 +12,30 @@ export function LegalInfo() {
       className="mt-16 max-w-none mx-auto"
     >
       {/* Header Section */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-500 via-slate-600 to-slate-700 shadow-glass mb-6">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-600 via-slate-700 to-slate-800 shadow-glass-lg-lg mb-8">
         <div className="absolute inset-0 bg-white/10"></div>
-        <div className="relative px-6 sm:px-8 py-6 sm:py-8">
+        <div className="relative px-6 sm:px-8 py-8 sm:py-10">
           <motion.div 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center"
           >
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/30 backdrop-blur-sm">
-                <Scale className="h-6 w-6 text-white" />
-              </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mb-6">
+              <motion.div 
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-3xl bg-white/30 backdrop-blur-sm shadow-lg"
+              >
+                <Scale className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
+              </motion.div>
               <div className="text-center sm:text-left">
-                <div className="text-xs font-medium text-slate-50 mb-1 tracking-wide uppercase">Material Explicativ Oficial</div>
-                <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-2">
+                <div className="text-xs sm:text-sm font-medium text-slate-50 mb-2 tracking-wide uppercase">Material Explicativ Oficial</div>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-3">
                   Serviciul Vamal RM
                 </h2>
-                <div className="text-sm font-medium text-white/90">
+                <div className="text-base sm:text-lg font-semibold text-white/90">
                   Introducerea mijloacelor de transport cu numere străine
                 </div>
               </div>
@@ -40,15 +45,15 @@ export function LegalInfo() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid gap-6 lg:gap-8">
+      <div className="grid gap-8 lg:gap-10">
         {/* First Row - Key Information */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {/* Who Can Import */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50/80 to-blue-100/80 border border-blue-200/50 shadow-glass transition-all duration-300"
+            className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50/90 to-blue-100/90 border border-blue-200/60 shadow-glass-lg-lg transition-all duration-300 hover:shadow-glass-xl hover:-translate-y-1 hover:shadow-glass-lg-xl hover:-translate-y-1"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
@@ -63,11 +68,11 @@ export function LegalInfo() {
                   Pot introduce mijloace de transport străine în regim vamal de admitere temporară declarându-le prin acțiune:
                 </p>
                 <div className="space-y-3">
-                  <div className="flex items-start gap-3 p-4 rounded-xl bg-white/70 backdrop-blur-sm border border-blue-100/80 shadow-glass">
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-white/70 backdrop-blur-sm border border-blue-100/80 shadow-glass-lg">
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500 text-white text-sm font-bold">1</div>
                     <span className="text-base text-blue-800 font-medium">Persoanele fizice stabilite în afara teritoriului vamal</span>
                   </div>
-                  <div className="flex items-start gap-3 p-4 rounded-xl bg-white/70 backdrop-blur-sm border border-blue-100/80 shadow-glass">
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-white/70 backdrop-blur-sm border border-blue-100/80 shadow-glass-lg">
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500 text-white text-sm font-bold">2</div>
                     <span className="text-base text-blue-800 font-medium">Persoanele fizice stabilite pe teritoriul vamal</span>
                   </div>
@@ -86,7 +91,7 @@ export function LegalInfo() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-50/80 to-emerald-100/80 border border-green-200/50 shadow-glass transition-all duration-300"
+            className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-50/80 to-emerald-100/80 border border-green-200/50 shadow-glass-lg transition-all duration-300 hover:shadow-glass-xl hover:-translate-y-1"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
@@ -116,13 +121,13 @@ export function LegalInfo() {
         </div>
 
         {/* Second Row - Calculation and Sanctions */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {/* Calculation */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-50/80 to-indigo-100/80 border border-purple-200/50 shadow-glass transition-all duration-300"
+            className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-50/80 to-indigo-100/80 border border-purple-200/50 shadow-glass-lg transition-all duration-300 hover:shadow-glass-xl hover:-translate-y-1"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
@@ -152,7 +157,7 @@ export function LegalInfo() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-50/80 to-orange-100/80 border border-red-200/50 shadow-glass transition-all duration-300"
+            className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-50/80 to-orange-100/80 border border-red-200/50 shadow-glass-lg transition-all duration-300 hover:shadow-glass-xl hover:-translate-y-1"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
@@ -186,13 +191,13 @@ export function LegalInfo() {
         </div>
 
         {/* Third Row - Conditions and Contact */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {/* Conditions */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-50/80 to-blue-100/80 border border-indigo-200/50 shadow-glass transition-all duration-300"
+            className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-50/80 to-blue-100/80 border border-indigo-200/50 shadow-glass-lg transition-all duration-300 hover:shadow-glass-xl hover:-translate-y-1"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
@@ -204,19 +209,19 @@ export function LegalInfo() {
               </div>
               <div className="space-y-4">
                 <div className="space-y-3">
-                  <div className="flex items-start gap-3 p-3 rounded-xl bg-white/70 backdrop-blur-sm border border-indigo-100/80 shadow-glass">
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-white/70 backdrop-blur-sm border border-indigo-100/80 shadow-glass-lg">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500 text-white text-xs font-bold">1</div>
                     <span className="text-sm text-indigo-800">Mărfurile nu suferă nicio modificare (doar uzura normală)</span>
                   </div>
-                  <div className="flex items-start gap-3 p-3 rounded-xl bg-white/70 backdrop-blur-sm border border-indigo-100/80 shadow-glass">
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-white/70 backdrop-blur-sm border border-indigo-100/80 shadow-glass-lg">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500 text-white text-xs font-bold">2</div>
                     <span className="text-sm text-indigo-800">Este posibilă asigurarea identificării mărfurilor</span>
                   </div>
-                  <div className="flex items-start gap-3 p-3 rounded-xl bg-white/70 backdrop-blur-sm border border-indigo-100/80 shadow-glass">
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-white/70 backdrop-blur-sm border border-indigo-100/80 shadow-glass-lg">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500 text-white text-xs font-bold">3</div>
                     <span className="text-sm text-indigo-800">Titularul regimului este stabilit în afara teritoriului vamal</span>
                   </div>
-                  <div className="flex items-start gap-3 p-3 rounded-xl bg-white/70 backdrop-blur-sm border border-indigo-100/80 shadow-glass">
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-white/70 backdrop-blur-sm border border-indigo-100/80 shadow-glass-lg">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500 text-white text-xs font-bold">4</div>
                     <span className="text-sm text-indigo-800">Sunt îndeplinite cerințele pentru scutirea de drepturi de import</span>
                   </div>
@@ -235,7 +240,7 @@ export function LegalInfo() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 1.0 }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-50/80 to-green-100/80 border border-emerald-200/50 shadow-glass transition-all duration-300"
+            className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50/80 to-green-100/80 border border-emerald-200/50 shadow-glass-lg transition-all duration-300 hover:shadow-glass-xl hover:-translate-y-1"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative p-6 sm:p-8">
@@ -263,17 +268,17 @@ export function LegalInfo() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.1 }}
-          className="mt-8"
+          transition={{ duration: 0.6, delay: 1.1 }}
+          className="mt-10"
         >
-          <div className="p-6 rounded-2xl bg-gradient-to-r from-slate-100/80 to-gray-100/80 border border-slate-200/60 backdrop-blur-sm">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-500 ">
-                <BookOpen className="h-5 w-5 text-white" />
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-slate-100/90 to-gray-100/90 border border-slate-200/70 backdrop-blur-sm shadow-glass-lg">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-600 shadow-md">
+                <BookOpen className="h-6 w-6 text-white" />
               </div>
-              <h4 className="text-lg font-bold text-slate-800">Notă importantă</h4>
+              <h4 className="text-xl font-bold text-slate-800">Notă importantă</h4>
             </div>
-            <p className="text-sm text-slate-700 leading-relaxed">
+            <p className="text-base text-slate-700 leading-relaxed">
               <strong className="font-semibold">Această aplicație este doar pentru demonstrație.</strong> Pentru informații oficiale și actualizate, 
               consultați Serviciul Vamal al Republicii Moldova sau contactați Centrul Unic de Apel la numărul de telefon indicat mai sus.
             </p>

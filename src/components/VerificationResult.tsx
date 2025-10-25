@@ -65,24 +65,29 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
       className="w-full mx-auto"
     >
       {/* Header Section */}
-      <div className={`relative overflow-hidden rounded-2xl ${gradientPatterns.blueHeader} shadow-glass mb-6`}>
+      <div className={`relative overflow-hidden rounded-3xl ${gradientPatterns.blueHeader} shadow-glass-lg mb-8`}>
         <div className="absolute inset-0 bg-white/10"></div>
-        <div className="relative px-6 sm:px-8 py-6 sm:py-8">
+        <div className="relative px-6 sm:px-8 py-8 sm:py-10">
           <motion.div 
             {...animationPatterns.fadeInUp}
-            transition={{ duration: 0.4, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-center"
           >
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/30 backdrop-blur-sm">
-                <span className="text-2xl">{getStatusEmoji()}</span>
-              </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mb-6">
+              <motion.div 
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-white/30 backdrop-blur-sm shadow-lg"
+              >
+                <span className="text-3xl sm:text-4xl">{getStatusEmoji()}</span>
+              </motion.div>
               <div className="text-center sm:text-left">
-                <div className="text-xs font-medium text-blue-50 mb-1 tracking-wide uppercase">Numărul de înmatriculare</div>
-                <h1 className={responsiveClasses.text.heading + ' text-white mb-2'}>
+                <div className="text-xs sm:text-sm font-medium text-blue-50 mb-2 tracking-wide uppercase">Numărul de înmatriculare</div>
+                <h1 className={`${responsiveClasses.text.heading} text-white mb-3 font-black`}>
                   {result.plateNumber}
                 </h1>
-                <div className="text-sm font-medium text-white/90">
+                <div className="text-base sm:text-lg font-semibold text-white/90">
                   {getStatusMessage()}
                 </div>
               </div>
@@ -306,19 +311,20 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
         {/* Action Button */}
         <motion.div
           {...animationPatterns.fadeInUp}
-          transition={{ duration: 0.5, delay: 1.2 }}
-          className="pt-4"
+          transition={{ duration: 0.6, delay: 1.2 }}
+          className="pt-6"
         >
           <Button
             onClick={onNewSearch}
             variant="primary"
-            className="w-full h-16 rounded-2xl text-lg font-bold shadow-glass transition-all duration-300 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-800 transform hover:scale-[1.02]"
+            size="xl"
+            className="w-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
           >
-            <div className="flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 ">
-                <span className="text-lg">🔍</span>
+            <div className="flex items-center gap-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
+                <span className="text-xl">🔍</span>
               </div>
-              Verifică Alt Autovehicul
+              <span className="text-lg sm:text-xl font-bold">Verifică Alt Autovehicul</span>
             </div>
           </Button>
         </motion.div>

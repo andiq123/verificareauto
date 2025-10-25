@@ -58,36 +58,55 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      initial={{ opacity: 0, y: 24, scale: 0.96 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: -20, scale: 0.95 }}
+      exit={{ opacity: 0, y: -24, scale: 0.96 }}
       transition={{ 
-        duration: 0.5, 
+        duration: 0.6, 
         ease: [0.4, 0.0, 0.2, 1]
       }}
       className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto"
     >
-      <Card className="rounded-2xl border border-white/30 bg-white/60 shadow-glass backdrop-blur-xl">
-        <CardHeader className="text-center px-4 sm:px-6">
-          <div className="mx-auto mb-4 sm:mb-6 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50/80 to-indigo-50/80 backdrop-blur-sm">
-            <Car className="h-8 w-8 sm:h-10 sm:w-10 text-blue-700" aria-hidden="true" />
-          </div>
-          <CardTitle className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Verifică un autovehicul</CardTitle>
-          <CardDescription className="text-base sm:text-lg text-slate-600 mt-2 px-2">
-            Introduceți orice număr de înmatriculare pentru a obține un raport de verificare simulat
-          </CardDescription>
+      <Card className="rounded-3xl border border-white/40 bg-white/80 shadow-glass-lg backdrop-blur-xl">
+        <CardHeader className="text-center px-6 sm:px-8 py-8">
+          <motion.div 
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mx-auto mb-6 flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-50/90 to-indigo-50/90 backdrop-blur-sm shadow-lg"
+          >
+            <Car className="h-10 w-10 sm:h-12 sm:w-12 text-blue-700" aria-hidden="true" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <CardTitle className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-3">
+              Verifică un autovehicul
+            </CardTitle>
+            <CardDescription className="text-base sm:text-lg text-slate-600 leading-relaxed px-2">
+              Introduceți orice număr de înmatriculare pentru a obține un raport de verificare simulat
+            </CardDescription>
+          </motion.div>
         </CardHeader>
-        <CardContent className="px-4 sm:px-6">
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="space-y-2">
-              <label htmlFor="plate" className="text-sm sm:text-base font-medium text-slate-700">
+        <CardContent className="px-6 sm:px-8 pb-8">
+          <motion.form 
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <div className="space-y-3">
+              <label htmlFor="plate" className="text-sm sm:text-base font-semibold text-slate-700 block">
                 Numărul de înmatriculare
               </label>
-              <div className="group relative flex items-center rounded-xl border-2 border-slate-200/60 bg-white/80 backdrop-blur-sm transition-all duration-200 focus-within:border-blue-500 min-h-[56px] sm:min-h-[60px]">
-                <div className="ml-3 sm:ml-4 flex h-10 w-14 sm:h-11 sm:w-16 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-xs sm:text-sm font-bold tracking-wider text-white">
+              <div className="group relative flex items-center rounded-2xl border-2 border-slate-200/70 bg-white/90 backdrop-blur-sm transition-all duration-300 focus-within:border-blue-500 focus-within:shadow-lg min-h-[60px] sm:min-h-[64px]">
+                <div className="ml-4 sm:ml-5 flex h-11 w-16 sm:h-12 sm:w-18 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-xs sm:text-sm font-bold tracking-wider text-white shadow-md">
                   EU
                 </div>
-                <div className="mx-3 sm:mx-4 h-6 sm:h-7 w-px bg-gradient-to-b from-slate-200 to-slate-300" />
+                <div className="mx-4 sm:mx-5 h-7 sm:h-8 w-px bg-gradient-to-b from-slate-200 to-slate-300" />
                 <input
                   id="plate"
                   type="text"
@@ -95,42 +114,56 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
                   value={plateNumber}
                   onChange={handleInputChange}
                   maxLength={MAX_PLATE_LENGTH}
-                  className="peer flex-1 bg-transparent py-3 sm:py-4 pr-3 sm:pr-4 text-sm sm:text-base font-mono tracking-[0.15em] sm:tracking-[0.25em] uppercase text-slate-900 placeholder:text-slate-400 placeholder:text-xs sm:placeholder:text-sm outline-none"
+                  className="peer flex-1 bg-transparent py-4 sm:py-5 pr-4 sm:pr-5 text-sm sm:text-base font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase text-slate-900 placeholder:text-slate-400 placeholder:text-xs sm:placeholder:text-sm outline-none transition-all duration-200"
                   disabled={loading}
                   autoComplete="off"
                   spellCheck={false}
                 />
               </div>
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500">
-                <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                <span className="text-xs sm:text-sm">Doar demonstrație: orice introducere generează un raport aleatoriu.</span>
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 px-3 py-2 rounded-lg bg-slate-50/80 border border-slate-200/60">
+                <Info className="h-4 w-4 flex-shrink-0" />
+                <span className="leading-relaxed">Doar demonstrație: orice introducere generează un raport aleatoriu.</span>
               </div>
               {invalidCharError && (
-                <p className="text-sm text-red-600 font-medium">{invalidCharError}</p>
+                <motion.p 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-sm text-red-600 font-medium flex items-center gap-2"
+                >
+                  <div className="w-1 h-1 bg-red-500 rounded-full"></div>
+                  {invalidCharError}
+                </motion.p>
               )}
               {error && (
-                <p className="text-sm text-red-600">{error}</p>
+                <motion.p 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-sm text-red-600 font-medium flex items-center gap-2"
+                >
+                  <div className="w-1 h-1 bg-red-500 rounded-full"></div>
+                  {error}
+                </motion.p>
               )}
             </div>
             <Button
               type="submit"
               variant="primary"
-              className="w-full h-12 sm:h-14 rounded-xl text-sm sm:text-base font-semibold transition-all duration-200"
+              className="w-full h-14 sm:h-16 rounded-2xl text-base sm:text-lg font-bold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
               disabled={loading}
             >
               {loading ? (
-                <>
-                  <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-white/70 border-t-transparent" />
-                  Verificare...
-                </>
+                <div className="flex items-center gap-3">
+                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white/70 border-t-transparent" />
+                  <span>Verificare...</span>
+                </div>
               ) : (
-                <>
-                  <Search className="mr-2 h-4 w-4" />
-                  Verifică Statusul
-                </>
+                <div className="flex items-center gap-3">
+                  <Search className="h-5 w-5" />
+                  <span>Verifică Statusul</span>
+                </div>
               )}
             </Button>
-          </form>
+          </motion.form>
         </CardContent>
       </Card>
     </motion.div>

@@ -18,6 +18,9 @@ const geistMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "Verificare Autovehicule Străine - Serviciul Vamal RM",
   description: "Verificați câte zile vă mai rămân pentru autovehiculele cu numere străine în Republica Moldova",
+};
+
+export const viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },

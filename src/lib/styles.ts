@@ -6,22 +6,22 @@ export const gradientPatterns = {
   slateHeader: 'bg-gradient-to-br from-slate-600 via-slate-700 to-slate-800',
   
   // Card gradients
-  blueCard: 'bg-gradient-to-br from-blue-50 to-blue-100',
-  greenCard: 'bg-gradient-to-br from-green-50 to-emerald-100',
-  purpleCard: 'bg-gradient-to-br from-purple-50 to-indigo-100',
-  orangeCard: 'bg-gradient-to-br from-orange-50 to-yellow-100',
-  redCard: 'bg-gradient-to-br from-red-50 to-orange-100',
-  indigoCard: 'bg-gradient-to-br from-indigo-50 to-blue-100',
-  emeraldCard: 'bg-gradient-to-br from-emerald-50 to-green-100',
+  blueCard: 'bg-gradient-to-br from-blue-50/80 to-blue-100/80',
+  greenCard: 'bg-gradient-to-br from-green-50/80 to-emerald-100/80',
+  purpleCard: 'bg-gradient-to-br from-purple-50/80 to-indigo-100/80',
+  orangeCard: 'bg-gradient-to-br from-orange-50/80 to-yellow-100/80',
+  redCard: 'bg-gradient-to-br from-red-50/80 to-orange-100/80',
+  indigoCard: 'bg-gradient-to-br from-indigo-50/80 to-blue-100/80',
+  emeraldCard: 'bg-gradient-to-br from-emerald-50/80 to-green-100/80',
   
   // Border colors
-  blueBorder: 'border-blue-200/50',
-  greenBorder: 'border-green-200/50',
-  purpleBorder: 'border-purple-200/50',
-  orangeBorder: 'border-orange-200/50',
-  redBorder: 'border-red-200/50',
-  indigoBorder: 'border-indigo-200/50',
-  emeraldBorder: 'border-emerald-200/50',
+  blueBorder: 'border-blue-200/60',
+  greenBorder: 'border-green-200/60',
+  purpleBorder: 'border-purple-200/60',
+  orangeBorder: 'border-orange-200/60',
+  redBorder: 'border-red-200/60',
+  indigoBorder: 'border-indigo-200/60',
+  emeraldBorder: 'border-emerald-200/60',
   
   // Icon backgrounds
   blueIcon: 'bg-gradient-to-br from-blue-500 to-blue-600',
@@ -65,10 +65,10 @@ export const animationPatterns = {
 }
 
 export const cardStyles = {
-  base: 'group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300',
+  base: 'group relative overflow-hidden rounded-2xl shadow-glass hover:shadow-glass-lg transition-all duration-300',
   hoverOverlay: 'absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300',
   content: 'relative p-6 sm:p-8',
-  iconContainer: 'flex h-12 w-12 items-center justify-center rounded-xl shadow-lg',
+  iconContainer: 'flex h-12 w-12 items-center justify-center rounded-xl shadow-glass',
   title: 'text-xl font-bold',
   subtitle: 'text-sm font-medium',
 }

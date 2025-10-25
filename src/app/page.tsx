@@ -93,24 +93,24 @@ export default function Home() {
           transition={{ duration: 0.4, ease: 'easeOut' }}
           className="text-center mb-12"
         >
-          <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-b from-zinc-900 via-blue-800 to-indigo-700 bg-clip-text text-transparent">
+          <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-b from-slate-900 via-blue-700 to-indigo-600 bg-clip-text text-transparent">
             Verificare Autovehicule Străine
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Verificați câte zile vă mai rămân pentru autovehiculele cu numere străine în Republica Moldova. 
-            <span className="font-semibold text-blue-700"> Limita legală: 180 zile pe an.</span>
+            <span className="font-semibold text-blue-600"> Limita legală: 180 zile pe an.</span>
           </p>
-          <div className="mt-6 flex items-center justify-center gap-6 text-sm text-zinc-500">
+          <div className="mt-6 flex items-center justify-center gap-6 text-sm text-slate-500">
             <div className="flex items-center gap-2">
-              <Shield className="h-4 w-4 text-green-600" />
+              <Shield className="h-4 w-4 text-emerald-500" />
               <span>Verificare instantanee</span>
             </div>
             <div className="flex items-center gap-2">
-              <Timer className="h-4 w-4 text-blue-600" />
+              <Timer className="h-4 w-4 text-blue-500" />
               <span>Date simulate</span>
             </div>
             <div className="flex items-center gap-2">
-              <RefreshCw className="h-4 w-4 text-orange-600" />
+              <RefreshCw className="h-4 w-4 text-amber-500" />
               <span>Resetare anuală</span>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function Home() {
         {/* Main Content with gradient ring */}
         <div className="flex justify-center px-4 sm:px-6 lg:px-8">
           <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none xl:max-w-none 2xl:max-w-none">
-            <div className="pointer-events-none absolute -inset-1 rounded-[28px] bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-blue-500/20 opacity-40 blur-md sm:blur-lg" />
+            <div className="pointer-events-none absolute -inset-1 rounded-[28px] bg-gradient-to-r from-blue-400/30 via-indigo-400/30 to-blue-400/30 opacity-50 blur-md sm:blur-lg" />
             <motion.div layout className="relative w-full">
               {!result ? (
                 <div ref={inputRef}>
@@ -137,7 +137,7 @@ export default function Home() {
         {/* Feature banners below input (only before results) */}
         {!result && (
           <>
-            <div className="mx-auto mt-6 h-px w-full max-w-3xl bg-gradient-to-r from-transparent via-blue-300/50 to-transparent" />
+            <div className="mx-auto mt-6 h-px w-full max-w-3xl bg-gradient-to-r from-transparent via-blue-200/60 to-transparent" />
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -161,15 +161,15 @@ export default function Home() {
                 desc: 'Zilele se resetează la 1 ianuarie.',
               },
             ].map(({ icon: Icon, title, desc }, idx) => (
-              <div key={idx} className="relative overflow-hidden rounded-xl border border-zinc-200 bg-white/90 px-4 py-4 shadow-sm backdrop-blur transition-shadow hover:shadow-md">
-                <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-blue-600 to-indigo-600" />
+              <div key={idx} className="relative overflow-hidden rounded-xl border border-white/30 bg-white/60 px-4 py-4 shadow-glass backdrop-blur-xl transition-all duration-300 hover:shadow-glass-lg hover:bg-white/70">
+                <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-indigo-500" />
                 <div className="relative flex items-start gap-3">
-                  <div className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-50">
-                    <Icon className="h-4 w-4 text-blue-700" />
+                  <div className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-50/80 backdrop-blur-sm">
+                    <Icon className="h-4 w-4 text-blue-600" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-zinc-900">{title}</div>
-                    <div className="text-xs text-zinc-600">{desc}</div>
+                    <div className="text-sm font-medium text-slate-900">{title}</div>
+                    <div className="text-xs text-slate-600">{desc}</div>
                   </div>
                 </div>
               </div>
@@ -192,7 +192,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.1 }}
-          className="text-center mt-14 text-sm text-zinc-500"
+          className="text-center mt-14 text-sm text-slate-500"
         >
           Doar demonstrație. Datele sunt simulate.
         </motion.div>

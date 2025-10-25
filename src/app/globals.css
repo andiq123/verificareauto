@@ -71,8 +71,22 @@
   }
 }
 
+html {
+  background-color: var(--background);
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100svh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve mobile scrolling stability */
+* {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }

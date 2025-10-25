@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa;
-  --foreground: #1f2937;
-  --card: #ffffff;
-  --card-foreground: #1f2937;
-  --popover: #ffffff;
-  --popover-foreground: #1f2937;
-  --primary: #2563eb;
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card: rgba(255, 255, 255, 0.8);
+  --card-foreground: #0f172a;
+  --popover: rgba(255, 255, 255, 0.95);
+  --popover-foreground: #0f172a;
+  --primary: #3b82f6;
   --primary-foreground: #ffffff;
-  --secondary: #f3f4f6;
-  --secondary-foreground: #374151;
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
-  --accent: #f3f4f6;
-  --accent-foreground: #374151;
+  --secondary: rgba(248, 250, 252, 0.8);
+  --secondary-foreground: #334155;
+  --muted: rgba(241, 245, 249, 0.8);
+  --muted-foreground: #64748b;
+  --accent: rgba(248, 250, 252, 0.8);
+  --accent-foreground: #334155;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
-  --ring: #2563eb;
-  --radius: 0.5rem;
+  --border: rgba(226, 232, 240, 0.6);
+  --input: rgba(226, 232, 240, 0.8);
+  --ring: #3b82f6;
+  --radius: 0.75rem;
 }
 
 @theme inline {
@@ -49,35 +49,35 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1f2937;
-    --foreground: #f9fafb;
-    --card: #374151;
-    --card-foreground: #f9fafb;
-    --popover: #374151;
-    --popover-foreground: #f9fafb;
-    --primary: #3b82f6;
-    --primary-foreground: #ffffff;
-    --secondary: #4b5563;
-    --secondary-foreground: #f3f4f6;
-    --muted: #4b5563;
-    --muted-foreground: #9ca3af;
-    --accent: #4b5563;
-    --accent-foreground: #f3f4f6;
-    --destructive: #ef4444;
-    --destructive-foreground: #ffffff;
-    --border: #4b5563;
-    --input: #4b5563;
-    --ring: #3b82f6;
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --card: rgba(30, 41, 59, 0.8);
+    --card-foreground: #f8fafc;
+    --popover: rgba(30, 41, 59, 0.95);
+    --popover-foreground: #f8fafc;
+    --primary: #60a5fa;
+    --primary-foreground: #0f172a;
+    --secondary: rgba(51, 65, 85, 0.8);
+    --secondary-foreground: #e2e8f0;
+    --muted: rgba(51, 65, 85, 0.8);
+    --muted-foreground: #94a3b8;
+    --accent: rgba(51, 65, 85, 0.8);
+    --accent-foreground: #e2e8f0;
+    --destructive: #f87171;
+    --destructive-foreground: #0f172a;
+    --border: rgba(71, 85, 105, 0.6);
+    --input: rgba(71, 85, 105, 0.8);
+    --ring: #60a5fa;
   }
 }
 
 html {
-  background-color: var(--background);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background-color: var(--background);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   min-height: 100svh;
@@ -89,4 +89,39 @@ body {
 * {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+
+/* Glass morphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced shadow utilities for glass effect */
+.shadow-glass {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.shadow-glass-lg {
+  box-shadow: 0 15px 35px 0 rgba(31, 38, 135, 0.2);
+}
+
+.shadow-glass-xl {
+  box-shadow: 0 25px 50px 0 rgba(31, 38, 135, 0.15);
 }

@@ -67,27 +67,27 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
       }}
       className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto"
     >
-      <Card className="rounded-2xl border border-white/50 bg-white/80 shadow-lg">
+      <Card className="rounded-2xl border border-white/30 bg-white/60 shadow-glass backdrop-blur-xl">
         <CardHeader className="text-center px-4 sm:px-6">
-          <div className="mx-auto mb-4 sm:mb-6 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 shadow-lg">
+          <div className="mx-auto mb-4 sm:mb-6 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50/80 to-indigo-50/80 shadow-glass backdrop-blur-sm">
             <Car className="h-8 w-8 sm:h-10 sm:w-10 text-blue-700" aria-hidden="true" />
           </div>
-          <CardTitle className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900">Verifică un autovehicul</CardTitle>
-          <CardDescription className="text-base sm:text-lg text-zinc-600 mt-2 px-2">
+          <CardTitle className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Verifică un autovehicul</CardTitle>
+          <CardDescription className="text-base sm:text-lg text-slate-600 mt-2 px-2">
             Introduceți orice număr de înmatriculare pentru a obține un raport de verificare simulat
           </CardDescription>
         </CardHeader>
         <CardContent className="px-4 sm:px-6">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
-              <label htmlFor="plate" className="text-sm sm:text-base font-medium text-zinc-700">
+              <label htmlFor="plate" className="text-sm sm:text-base font-medium text-slate-700">
                 Numărul de înmatriculare
               </label>
-              <div className="group relative flex items-center rounded-xl border-2 border-zinc-200 bg-white shadow-lg transition-all duration-200 focus-within:border-blue-500 focus-within:shadow-xl focus-within:shadow-blue-500/10 min-h-[56px] sm:min-h-[60px]">
-                <div className="ml-3 sm:ml-4 flex h-10 w-14 sm:h-11 sm:w-16 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 text-xs sm:text-sm font-bold tracking-wider text-white shadow-md">
+              <div className="group relative flex items-center rounded-xl border-2 border-slate-200/60 bg-white/80 backdrop-blur-sm shadow-glass transition-all duration-200 focus-within:border-blue-500 focus-within:shadow-glass-lg focus-within:shadow-blue-500/20 min-h-[56px] sm:min-h-[60px]">
+                <div className="ml-3 sm:ml-4 flex h-10 w-14 sm:h-11 sm:w-16 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-xs sm:text-sm font-bold tracking-wider text-white shadow-glass">
                   EU
                 </div>
-                <div className="mx-3 sm:mx-4 h-6 sm:h-7 w-px bg-gradient-to-b from-zinc-200 to-zinc-300" />
+                <div className="mx-3 sm:mx-4 h-6 sm:h-7 w-px bg-gradient-to-b from-slate-200 to-slate-300" />
                 <input
                   id="plate"
                   type="text"
@@ -95,13 +95,13 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
                   value={plateNumber}
                   onChange={handleInputChange}
                   maxLength={MAX_PLATE_LENGTH}
-                  className="peer flex-1 bg-transparent py-3 sm:py-4 pr-3 sm:pr-4 text-sm sm:text-base font-mono tracking-[0.15em] sm:tracking-[0.25em] uppercase text-zinc-900 placeholder:text-zinc-400 placeholder:text-xs sm:placeholder:text-sm outline-none"
+                  className="peer flex-1 bg-transparent py-3 sm:py-4 pr-3 sm:pr-4 text-sm sm:text-base font-mono tracking-[0.15em] sm:tracking-[0.25em] uppercase text-slate-900 placeholder:text-slate-400 placeholder:text-xs sm:placeholder:text-sm outline-none"
                   disabled={loading}
                   autoComplete="off"
                   spellCheck={false}
                 />
               </div>
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500">
                 <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 <span className="text-xs sm:text-sm">Doar demonstrație: orice introducere generează un raport aleatoriu.</span>
               </div>

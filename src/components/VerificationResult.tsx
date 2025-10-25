@@ -65,8 +65,8 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
       className="w-full mx-auto"
     >
       {/* Header Section */}
-      <div className={`relative overflow-hidden rounded-2xl ${gradientPatterns.blueHeader} shadow-sm mb-6`}>
-        <div className="absolute inset-0 bg-black/10"></div>
+      <div className={`relative overflow-hidden rounded-2xl ${gradientPatterns.blueHeader} shadow-glass mb-6`}>
+        <div className="absolute inset-0 bg-white/10"></div>
         <div className="relative px-6 sm:px-8 py-6 sm:py-8">
           <motion.div 
             {...animationPatterns.fadeInUp}
@@ -74,11 +74,11 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
             className="text-center"
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 shadow-sm">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/30 shadow-glass backdrop-blur-sm">
                 <span className="text-2xl">{getStatusEmoji()}</span>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-xs font-medium text-blue-100 mb-1 tracking-wide uppercase">Numărul de înmatriculare</div>
+                <div className="text-xs font-medium text-blue-50 mb-1 tracking-wide uppercase">Numărul de înmatriculare</div>
                 <h1 className={responsiveClasses.text.heading + ' text-white mb-2'}>
                   {result.plateNumber}
                 </h1>
@@ -206,10 +206,10 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
 
           {/* Not Found Message */}
           {result.status === 'not_found' && (
-            <div className="text-center p-8 rounded-xl border border-yellow-200 bg-yellow-50/70">
+            <div className="text-center p-8 rounded-xl border border-amber-200/60 bg-amber-50/60 backdrop-blur-sm shadow-glass">
               <div className="text-6xl mb-4">❓</div>
-              <h3 className="text-xl font-semibold text-yellow-800 mb-2">Autovehiculul nu a fost găsit</h3>
-              <p className="text-base text-yellow-700 leading-relaxed">
+              <h3 className="text-xl font-semibold text-amber-800 mb-2">Autovehiculul nu a fost găsit</h3>
+              <p className="text-base text-amber-700 leading-relaxed">
                 Acest autovehicul nu apare în înregistrările noastre, ceea ce înseamnă că nu a fost înregistrat în Republica Moldova.
               </p>
             </div>
@@ -218,14 +218,14 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
           {/* Warnings */}
           {result.warnings.length > 0 && (
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-zinc-700 flex items-center gap-2">
-                <AlertTriangle className="h-5 w-5 text-yellow-600" />
+              <h4 className="text-lg font-semibold text-slate-700 flex items-center gap-2">
+                <AlertTriangle className="h-5 w-5 text-amber-500" />
                 Avertismente
               </h4>
               {result.warnings.map((warning, index) => (
-                <div key={index} className="flex items-start space-x-3 p-4 rounded-xl border border-yellow-200/60 bg-yellow-50/70">
+                <div key={index} className="flex items-start space-x-3 p-4 rounded-xl border border-amber-200/60 bg-amber-50/60 backdrop-blur-sm shadow-glass">
                   <span className="text-lg">⚠️</span>
-                  <p className="text-base text-yellow-800 font-medium leading-relaxed">{warning}</p>
+                  <p className="text-base text-amber-800 font-medium leading-relaxed">{warning}</p>
                 </div>
               ))}
             </div>
@@ -254,13 +254,13 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
                 </div>
                 <div className="space-y-4">
                   {result.firstEntry && (
-                    <div className="flex justify-between items-center p-4 rounded-xl bg-white/60  border border-indigo-100">
+                    <div className="flex justify-between items-center p-4 rounded-xl bg-white/70 backdrop-blur-sm border border-indigo-100/80 shadow-glass">
                       <span className="font-semibold text-indigo-700">Prima intrare:</span>
                       <span className="font-bold text-indigo-900 text-lg">{new Date(result.firstEntry).toLocaleDateString('ro-RO')}</span>
                     </div>
                   )}
                   {result.lastEntry && (
-                    <div className="flex justify-between items-center p-4 rounded-xl bg-white/60  border border-indigo-100">
+                    <div className="flex justify-between items-center p-4 rounded-xl bg-white/70 backdrop-blur-sm border border-indigo-100/80 shadow-glass">
                       <span className="font-semibold text-indigo-700">Ultima intrare:</span>
                       <span className="font-bold text-indigo-900 text-lg">{new Date(result.lastEntry).toLocaleDateString('ro-RO')}</span>
                     </div>
@@ -284,15 +284,15 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
                   <h3 className={`${cardStyles.title} text-emerald-800`}>Perioada de Numărare</h3>
                 </div>
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center p-4 rounded-xl bg-white/60  border border-emerald-100">
+                  <div className="flex justify-between items-center p-4 rounded-xl bg-white/70 backdrop-blur-sm border border-emerald-100/80 shadow-glass">
                     <span className="font-semibold text-emerald-700">Începe:</span>
                     <span className="font-bold text-emerald-900 text-lg">{new Date(result.countingPeriodStart).toLocaleDateString('ro-RO')}</span>
                   </div>
-                  <div className="flex justify-between items-center p-4 rounded-xl bg-white/60  border border-emerald-100">
+                  <div className="flex justify-between items-center p-4 rounded-xl bg-white/70 backdrop-blur-sm border border-emerald-100/80 shadow-glass">
                     <span className="font-semibold text-emerald-700">Se termină:</span>
                     <span className="font-bold text-emerald-900 text-lg">{new Date(result.countingPeriodEnd).toLocaleDateString('ro-RO')}</span>
                   </div>
-                  <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200">
+                  <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-blue-100/80 to-indigo-100/80 border border-blue-200/60 backdrop-blur-sm shadow-glass">
                     <p className="text-sm text-blue-800 font-semibold leading-relaxed text-center">
                       🔄 Zilele se resetează la 180 pe {new Date(result.countingPeriodEnd).toLocaleDateString('ro-RO')} (12 luni de la prima intrare)
                     </p>

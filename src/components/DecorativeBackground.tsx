@@ -15,7 +15,13 @@ export function DecorativeBackground() {
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 0.6, scale: 1 }}
-        transition={{ duration: 1.2, ease: [0.4, 0.0, 0.2, 1] }}
+        transition={{ 
+          duration: 1.2, 
+          ease: [0.4, 0.0, 0.2, 1],
+          repeat: Infinity,
+          repeatType: "reverse",
+          repeatDelay: 3
+        }}
         className="absolute -top-32 -left-24 h-[28rem] w-[28rem] sm:h-[36rem] sm:w-[36rem] rounded-full blur-3xl sm:blur-[64px] transform-gpu"
         style={{
           background: 'radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.05), transparent 60%)',
@@ -28,7 +34,14 @@ export function DecorativeBackground() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 0.4, scale: 1 }}
-        transition={{ duration: 1.4, ease: [0.4, 0.0, 0.2, 1], delay: 0.2 }}
+        transition={{ 
+          duration: 1.4, 
+          ease: [0.4, 0.0, 0.2, 1], 
+          delay: 0.2,
+          repeat: Infinity,
+          repeatType: "reverse",
+          repeatDelay: 4
+        }}
         className="absolute top-[15%] right-[-12%] h-[24rem] w-[24rem] sm:h-[32rem] sm:w-[32rem] rounded-full blur-3xl sm:blur-[64px] transform-gpu"
         style={{
           background: 'radial-gradient(circle at 70% 20%, rgba(16, 185, 129, 0.08), rgba(34, 197, 94, 0.04), transparent 65%)',
@@ -41,7 +54,14 @@ export function DecorativeBackground() {
       <motion.div
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 0.5, scale: 1 }}
-        transition={{ duration: 1.6, ease: [0.4, 0.0, 0.2, 1], delay: 0.4 }}
+        transition={{ 
+          duration: 1.6, 
+          ease: [0.4, 0.0, 0.2, 1], 
+          delay: 0.4,
+          repeat: Infinity,
+          repeatType: "reverse",
+          repeatDelay: 5
+        }}
         className="absolute bottom-[-15%] left-[8%] h-[26rem] w-[26rem] sm:h-[34rem] sm:w-[34rem] rounded-full blur-3xl sm:blur-[64px] transform-gpu"
         style={{
           background: 'radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.06), rgba(139, 92, 246, 0.03), transparent 70%)',
@@ -55,7 +75,14 @@ export function DecorativeBackground() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 0.3, scale: 1 }}
-        transition={{ duration: 1.8, ease: [0.4, 0.0, 0.2, 1], delay: 0.6 }}
+        transition={{ 
+          duration: 1.8, 
+          ease: [0.4, 0.0, 0.2, 1], 
+          delay: 0.6,
+          repeat: Infinity,
+          repeatType: "reverse",
+          repeatDelay: 6
+        }}
         className="absolute top-[65%] left-[65%] h-[18rem] w-[18rem] sm:h-[22rem] sm:w-[22rem] rounded-full blur-2xl sm:blur-[48px] transform-gpu"
         style={{
           background: 'radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.05), rgba(251, 191, 36, 0.02), transparent 75%)',

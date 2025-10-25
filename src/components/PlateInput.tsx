@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Car, Search, Info } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -58,29 +58,29 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24, scale: 0.96 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: -24, scale: 0.96 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
       transition={{ 
-        duration: 0.6, 
-        ease: [0.4, 0.0, 0.2, 1]
+        duration: 0.4, 
+        ease: "easeOut"
       }}
       className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto"
     >
       <Card className="rounded-3xl border border-white/40 bg-white/80 shadow-glass-lg backdrop-blur-xl">
         <CardHeader className="text-center px-6 sm:px-8 py-8">
           <motion.div 
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="mx-auto mb-6 flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-50/90 to-indigo-50/90 backdrop-blur-sm shadow-lg"
           >
             <Car className="h-10 w-10 sm:h-12 sm:w-12 text-blue-700" aria-hidden="true" />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
             <CardTitle className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-3">
               Verifică un autovehicul
@@ -94,9 +94,9 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
           <motion.form 
             onSubmit={handleSubmit} 
             className="space-y-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
           >
             <div className="space-y-3">
               <label htmlFor="plate" className="text-sm sm:text-base font-semibold text-slate-700 block">
@@ -114,7 +114,7 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
                   value={plateNumber}
                   onChange={handleInputChange}
                   maxLength={MAX_PLATE_LENGTH}
-                  className="peer flex-1 bg-transparent py-4 sm:py-5 pr-4 sm:pr-5 text-sm sm:text-base font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase text-slate-900 placeholder:text-slate-400 placeholder:text-xs sm:placeholder:text-sm outline-none transition-all duration-200"
+                  className="peer flex-1 bg-transparent py-4 sm:py-5 pr-4 sm:pr-5 text-sm sm:text-base font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase text-slate-900 placeholder:text-slate-400 placeholder:text-xs sm:placeholder:text-sm outline-none focus:outline-none transition-all duration-200"
                   disabled={loading}
                   autoComplete="off"
                   spellCheck={false}
@@ -124,26 +124,34 @@ export function PlateInput({ onSubmit, loading = false }: PlateInputProps) {
                 <Info className="h-4 w-4 flex-shrink-0" />
                 <span className="leading-relaxed">Doar demonstrație: orice introducere generează un raport aleatoriu.</span>
               </div>
-              {invalidCharError && (
-                <motion.p 
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-sm text-red-600 font-medium flex items-center gap-2"
-                >
-                  <div className="w-1 h-1 bg-red-500 rounded-full"></div>
-                  {invalidCharError}
-                </motion.p>
-              )}
-              {error && (
-                <motion.p 
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-sm text-red-600 font-medium flex items-center gap-2"
-                >
-                  <div className="w-1 h-1 bg-red-500 rounded-full"></div>
-                  {error}
-                </motion.p>
-              )}
+              <AnimatePresence>
+                {invalidCharError && (
+                  <motion.p 
+                    key="invalid-char-error"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="text-sm text-red-600 font-medium flex items-center gap-2"
+                  >
+                    <div className="w-1 h-1 bg-red-500 rounded-full"></div>
+                    {invalidCharError}
+                  </motion.p>
+                )}
+                {error && (
+                  <motion.p 
+                    key="error"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="text-sm text-red-600 font-medium flex items-center gap-2"
+                  >
+                    <div className="w-1 h-1 bg-red-500 rounded-full"></div>
+                    {error}
+                  </motion.p>
+                )}
+              </AnimatePresence>
             </div>
             <Button
               type="submit"

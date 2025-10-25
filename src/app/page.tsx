@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { PlateInput } from '@/components/PlateInput'
 import { VerificationResult } from '@/components/VerificationResult'
 import { VerificationResponse } from '@/types'
@@ -90,7 +90,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.4, 0.0, 0.2, 1] }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <h1 className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-gradient-to-b from-slate-900 via-blue-700 to-indigo-600 bg-clip-text text-transparent leading-tight">
@@ -120,34 +120,60 @@ export default function Home() {
         <div className="flex justify-center px-4 sm:px-6 lg:px-8">
           <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-2xl xl:max-w-4xl">
             <div className="pointer-events-none absolute -inset-2 rounded-3xl bg-gradient-to-r from-blue-400/20 via-indigo-400/20 to-purple-400/20 opacity-60 blur-xl sm:blur-2xl" />
-            <motion.div 
-              layout 
-              className="relative w-full"
-              transition={{ duration: 0.4, ease: [0.4, 0.0, 0.2, 1] }}
-            >
-              {!result ? (
-                <div ref={inputRef}>
-                  <PlateInput onSubmit={handlePlateSubmit} loading={loading} />
-                </div>
-              ) : (
-                <div ref={resultsRef}>
-                  <VerificationResult result={result} onNewSearch={handleNewSearch} />
-                </div>
-              )}
-            </motion.div>
+            <div className="relative w-full">
+              <AnimatePresence mode="wait" initial={false}>
+                {!result ? (
+                  <motion.div 
+                    key="input"
+                    ref={inputRef}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ 
+                      duration: 0.4, 
+                      ease: "easeOut"
+                    }}
+                  >
+                    <PlateInput onSubmit={handlePlateSubmit} loading={loading} />
+                  </motion.div>
+                ) : (
+                  <motion.div 
+                    key="result"
+                    ref={resultsRef}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ 
+                      duration: 0.4, 
+                      ease: "easeOut"
+                    }}
+                  >
+                    <VerificationResult result={result} onNewSearch={handleNewSearch} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
         </div>
 
         {/* Feature banners below input (only before results) */}
-        {!result && (
-          <>
-            <div className="mx-auto mt-12 h-px w-full max-w-4xl bg-gradient-to-r from-transparent via-blue-200/40 to-transparent" />
+        <AnimatePresence>
+          {!result && (
             <motion.div
+              key="feature-banners"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.4, 0.0, 0.2, 1], delay: 0.2 }}
-              className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
+              className="mx-auto mt-12"
             >
+              <div className="mx-auto h-px w-full max-w-4xl bg-gradient-to-r from-transparent via-blue-200/40 to-transparent" />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
+                className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+              >
             {[
               {
                 icon: Shield,
@@ -184,11 +210,11 @@ export default function Home() {
                 key={idx} 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
-                className="group relative overflow-hidden rounded-3xl border border-white/60 bg-white/80 px-8 py-8 shadow-glass-lg backdrop-blur-xl transition-all duration-500 hover:bg-white/90 hover:shadow-glass-xl hover:-translate-y-2 hover:scale-[1.02]"
+                transition={{ duration: 0.3, delay: 0.3 + idx * 0.05 }}
+                className="group relative overflow-hidden rounded-3xl border border-white/60 bg-white/80 px-8 py-8 shadow-glass-lg backdrop-blur-xl transition-all duration-500 hover:bg-white/90 hover:shadow-glass-xl hover:-translate-y-2 hover:scale-[1.02] transform-gpu"
               >
                 {/* Animated gradient background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform-gpu`} />
                 
                 {/* Left accent bar with gradient */}
                 <div className={`absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b ${gradient} shadow-lg`} />
@@ -196,7 +222,7 @@ export default function Home() {
                 {/* Content */}
                 <div className="relative flex items-start gap-6">
                   {/* Icon container with modern design */}
-                  <div className={`mt-1 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${iconBg} shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                  <div className={`mt-1 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${iconBg} shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 transform-gpu`}>
                     <Icon className="h-7 w-7 text-white" />
                   </div>
                   
@@ -210,37 +236,42 @@ export default function Home() {
                     </div>
                     
                     {/* Decorative element */}
-                    <div className={`mt-4 h-1 w-12 bg-gradient-to-r ${gradient} rounded-full opacity-60 group-hover:opacity-100 group-hover:w-16 transition-all duration-500`} />
+                    <div className={`mt-4 h-1 w-12 bg-gradient-to-r ${gradient} rounded-full opacity-60 group-hover:opacity-100 group-hover:w-16 transition-all duration-500 transform-gpu`} />
                   </div>
                 </div>
                 
                 {/* Subtle glow effect */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 -z-10`} />
+                <div className={`absolute -inset-1 bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 -z-10 transform-gpu`} />
               </motion.div>
             ))}
+              </motion.div>
             </motion.div>
-          </>
-        )}
+          )}
+        </AnimatePresence>
 
-        {error && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1] }}
-            className="max-w-lg mx-auto mt-8 p-6 bg-red-50/90 border border-red-200/60 rounded-2xl text-red-800 text-center shadow-glass backdrop-blur-sm"
-          >
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              <span className="font-semibold">Eroare</span>
-            </div>
-            {error}
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {error && (
+            <motion.div
+              key="error"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="max-w-lg mx-auto mt-8 p-6 bg-red-50/90 border border-red-200/60 rounded-2xl text-red-800 text-center shadow-glass backdrop-blur-sm"
+            >
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                <span className="font-semibold">Eroare</span>
+              </div>
+              {error}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
+          transition={{ delay: 0.3, duration: 0.3 }}
           className="text-center mt-16 text-sm text-slate-500"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100/80 border border-slate-200/60 backdrop-blur-sm">

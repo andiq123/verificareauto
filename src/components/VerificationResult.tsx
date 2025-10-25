@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Calendar, Clock, AlertTriangle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { VerificationResultProps } from '@/types'
-import { gradientPatterns, animationPatterns, cardStyles, responsiveClasses } from '@/lib/styles'
+import { gradientPatterns, animationPatterns, cardStyles, responsiveClasses, optimizedAnimations } from '@/lib/styles'
 
 export function VerificationResult({ result, onNewSearch }: VerificationResultProps) {
   const getStatusEmoji = () => {
@@ -54,13 +54,12 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: -20, scale: 0.95 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
       transition={{ 
-        duration: 0.5, 
-        ease: [0.4, 0.0, 0.2, 1],
-        staggerChildren: 0.1
+        duration: 0.4, 
+        ease: "easeOut"
       }}
       className="w-full mx-auto"
     >
@@ -72,6 +71,7 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
             {...animationPatterns.fadeInUp}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-center"
+            style={{ willChange: 'opacity, transform' }}
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mb-6">
               <motion.div 
@@ -79,6 +79,7 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-white/30 backdrop-blur-sm shadow-lg"
+                style={{ willChange: 'opacity, transform' }}
               >
                 <span className="text-3xl sm:text-4xl">{getStatusEmoji()}</span>
               </motion.div>
@@ -107,8 +108,9 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
           >
             {/* Days Used Card */}
             <motion.div 
-              {...animationPatterns.fadeInScale}
-              transition={{ duration: 0.4, delay: 0.5 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.5 }}
               className={`${cardStyles.base} ${gradientPatterns.blueCard} ${gradientPatterns.blueBorder}`}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-blue-500/10 to-blue-600/10`}></div>
@@ -130,8 +132,9 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
 
             {/* Days Remaining Card */}
             <motion.div 
-              {...animationPatterns.fadeInScale}
-              transition={{ duration: 0.4, delay: 0.6 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.6 }}
               className={`${cardStyles.base} ${gradientPatterns.greenCard} ${gradientPatterns.greenBorder}`}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-green-500/10 to-emerald-600/10`}></div>
@@ -153,8 +156,9 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
 
             {/* Progress Card */}
             <motion.div 
-              {...animationPatterns.fadeInScale}
-              transition={{ duration: 0.4, delay: 0.7 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.7 }}
               className={`${cardStyles.base} ${gradientPatterns.purpleCard} ${gradientPatterns.purpleBorder}`}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-purple-500/10 to-indigo-600/10`}></div>
@@ -182,8 +186,9 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
 
             {/* Status Card */}
             <motion.div 
-              {...animationPatterns.fadeInScale}
-              transition={{ duration: 0.4, delay: 0.8 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.8 }}
               className={`${cardStyles.base} ${gradientPatterns.orangeCard} ${gradientPatterns.orangeBorder}`}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-orange-500/10 to-yellow-600/10`}></div>
@@ -245,8 +250,9 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
           >
             {/* Entry Information */}
             <motion.div 
-              {...animationPatterns.slideInLeft}
-              transition={{ duration: 0.5, delay: 1.0 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 1.0 }}
               className={`${cardStyles.base} ${gradientPatterns.indigoCard} ${gradientPatterns.indigoBorder}`}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-indigo-500/10 to-blue-600/10`}></div>
@@ -276,8 +282,9 @@ export function VerificationResult({ result, onNewSearch }: VerificationResultPr
 
             {/* Counting Period Information */}
             <motion.div 
-              {...animationPatterns.slideInRight}
-              transition={{ duration: 0.5, delay: 1.1 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 1.1 }}
               className={`${cardStyles.base} ${gradientPatterns.emeraldCard} ${gradientPatterns.emeraldBorder}`}
             >
               <div className={`${cardStyles.hoverOverlay} bg-gradient-to-br from-emerald-500/10 to-green-600/10`}></div>

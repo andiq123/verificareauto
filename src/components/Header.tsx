@@ -12,7 +12,7 @@ export function Header() {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0.4, 0.0, 0.2, 1] }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="flex items-center gap-3 sm:gap-4"
           >
             <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 via-indigo-500 to-blue-600 shadow-lg">
@@ -28,7 +28,7 @@ export function Header() {
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.4, 0.0, 0.2, 1] }}
+            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
             className="hidden lg:flex items-center gap-4 xl:gap-6"
           >
             <div className="flex items-center gap-2 text-sm text-slate-600 px-3 py-2 rounded-full bg-blue-50/80 border border-blue-200/60">
@@ -47,9 +47,9 @@ export function Header() {
 
           {/* Mobile service indicator */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="lg:hidden flex items-center gap-2 text-xs text-slate-500 px-2 py-1 rounded-full bg-slate-100/80 border border-slate-200/60"
           >
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>

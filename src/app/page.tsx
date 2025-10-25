@@ -7,7 +7,7 @@ import { VerificationResult } from '@/components/VerificationResult'
 import { VerificationResponse } from '@/types'
 import { Header } from '@/components/Header'
 import { LegalInfo } from '@/components/LegalInfo'
-import { Shield, Timer, RefreshCw, Globe } from 'lucide-react'
+import { Shield, Timer, Calendar, Globe, Zap, CheckCircle } from 'lucide-react'
 
 export default function Home() {
   const [result, setResult] = useState<VerificationResponse | null>(null)
@@ -153,38 +153,69 @@ export default function Home() {
                 icon: Shield,
                 title: 'Regulament oficial',
                 desc: 'Autovehicule străine: 180 zile/an.',
-                color: 'blue'
+                color: 'blue',
+                gradient: 'from-blue-500 to-indigo-600',
+                bgGradient: 'from-blue-50/90 to-indigo-50/90',
+                iconBg: 'from-blue-500 to-indigo-600',
+                accent: 'blue-500'
               },
               {
-                icon: Timer,
-                title: 'Verificare rapidă',
+                icon: Zap,
+                title: 'Verificare instantanee',
                 desc: 'Obțineți un raport simulat instant.',
-                color: 'emerald'
+                color: 'emerald',
+                gradient: 'from-emerald-500 to-green-600',
+                bgGradient: 'from-emerald-50/90 to-green-50/90',
+                iconBg: 'from-emerald-500 to-green-600',
+                accent: 'emerald-500'
               },
               {
-                icon: RefreshCw,
+                icon: Calendar,
                 title: 'Resetare anuală',
                 desc: 'Zilele se resetează la 1 ianuarie.',
-                color: 'amber'
+                color: 'amber',
+                gradient: 'from-amber-500 to-orange-600',
+                bgGradient: 'from-amber-50/90 to-orange-50/90',
+                iconBg: 'from-amber-500 to-orange-600',
+                accent: 'amber-500'
               },
-            ].map(({ icon: Icon, title, desc, color }, idx) => (
+            ].map(({ icon: Icon, title, desc, color, gradient, bgGradient, iconBg, accent }, idx) => (
               <motion.div 
                 key={idx} 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
-                className={`group relative overflow-hidden rounded-2xl border border-white/40 bg-white/70 px-6 py-6 shadow-glass backdrop-blur-xl transition-all duration-300 hover:bg-white/80 hover:shadow-glass-lg hover:-translate-y-1`}
+                className="group relative overflow-hidden rounded-3xl border border-white/60 bg-white/80 px-8 py-8 shadow-glass-lg backdrop-blur-xl transition-all duration-500 hover:bg-white/90 hover:shadow-glass-xl hover:-translate-y-2 hover:scale-[1.02]"
               >
-                <div className={`absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-${color}-500 to-${color}-600`} />
-                <div className="relative flex items-start gap-4">
-                  <div className={`mt-1 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-${color}-50/90 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className={`h-5 w-5 text-${color}-600`} />
+                {/* Animated gradient background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                
+                {/* Left accent bar with gradient */}
+                <div className={`absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b ${gradient} shadow-lg`} />
+                
+                {/* Content */}
+                <div className="relative flex items-start gap-6">
+                  {/* Icon container with modern design */}
+                  <div className={`mt-1 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${iconBg} shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <Icon className="h-7 w-7 text-white" />
                   </div>
+                  
+                  {/* Text content */}
                   <div className="flex-1">
-                    <div className="text-base font-semibold text-slate-900 mb-1">{title}</div>
-                    <div className="text-sm text-slate-600 leading-relaxed">{desc}</div>
+                    <div className="text-xl font-bold text-slate-900 mb-2 group-hover:text-slate-800 transition-colors duration-300">
+                      {title}
+                    </div>
+                    <div className="text-base text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                      {desc}
+                    </div>
+                    
+                    {/* Decorative element */}
+                    <div className={`mt-4 h-1 w-12 bg-gradient-to-r ${gradient} rounded-full opacity-60 group-hover:opacity-100 group-hover:w-16 transition-all duration-500`} />
                   </div>
                 </div>
+                
+                {/* Subtle glow effect */}
+                <div className={`absolute -inset-1 bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 -z-10`} />
               </motion.div>
             ))}
             </motion.div>
